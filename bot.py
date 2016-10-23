@@ -5,6 +5,9 @@ token = 'kekmao'
 sc = SlackClient(token)
 team_join_event = 'team_join'
 
+with open('template.txt') as f:
+    template = f.read()
+
 
 def send_welcome_message(user):
     user_id = user['id']
@@ -14,7 +17,7 @@ def send_welcome_message(user):
     except (KeyError, ValueError):
         print('Shite happened')
         return
-    sc.rtm_send_message(dm_channel_id, 'welcome to devup')
+    sc.rtm_send_message(channel=dm_channel_id, message=template)
 
 
 def main():

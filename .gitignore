@@ -40,3 +40,6 @@ nosetests.xml
 
 # virtualenv
 venv/
+
+# env tokens
+.envrc

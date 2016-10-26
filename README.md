@@ -1,7 +1,33 @@
-#allie
+# allie
 
-allie is a welcome bot written for Slack teams in Python
+allie is a welcome bot written for Slack teams in Python 3.
 
-# License
+## Features
+
+- Sends a private message to newly joined team member
+- And then sends acknowledgement message to all admins that a new member has been joined
+
+## Installation
+
+### System Requirements
+
+- Python 3 (should work on Python 2 as well, but not tested)
+
+### Python Requirements
+    pip install -r requirements.txt
+
+### Instructions
+
+ - Change `template.txt` as per your requirements. Make sure the channel and user IDs are correct.
+ - Create a new bot from Custom Integrations (URL is https://teamname.slack.com/apps/build/custom-integration) and set the API Token as environment variable.
+ - Run `python3 bot.py`
+ - Bonus: use `supervisor.conf` to manage the process.
+
+## To do 
+
+- [ ] Better log messages
+- [ ] Better error handling
+
+## License
 
 The mighty MIT license. Please check `LICENSE` for more details.

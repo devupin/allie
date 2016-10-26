@@ -5,6 +5,7 @@ from settings import token
 
 sc = SlackClient(token)
 team_join_event = 'team_join'
+admin_dm_channels = []
 
 with open('template.txt') as f:
     template = f.read()

@@ -19,7 +19,8 @@ allie is a welcome bot written for Slack teams in Python 3.
 ### Instructions
 
  - Change `template.txt` as per your requirements. Make sure the channel and user IDs are correct.
- - Create a new bot from Custom Integrations (URL is https://teamname.slack.com/apps/build/custom-integration) and set the API Token as environment variable.
+ - Create a new bot from Custom Integrations (URL is https://teamname.slack.com/apps/build/custom-integration) and keep the API token somewhere safe.
+ - Rename `sample_settings.py` to `settings.py` and update API Token in the file.
  - Run `python3 bot.py`
  - Bonus: use `supervisor.conf` to manage the process.
 

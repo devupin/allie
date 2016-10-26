@@ -29,6 +29,10 @@ allie is a welcome bot written for Slack teams in Python 3.
 - [ ] Better log messages
 - [ ] Better error handling
 
+## Name
+
+The name Allie comes from the book The Notebook by Nicholas Sparks, where protagonist's name is Allie Nelson.
+
 ## License
 
 The mighty MIT license. Please check `LICENSE` for more details.

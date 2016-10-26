@@ -1,7 +1,9 @@
 import time
+import os
+
 from slackclient import SlackClient
 
-token = 'kekmao'
+token = os.environ['SLACK_BOT_API_TOKEN']
 sc = SlackClient(token)
 team_join_event = 'team_join'
 
@@ -30,13 +32,16 @@ def notify_admin(username):
 
 def send_welcome_message(user):
     user_id = user['id']
+    slack_name = user['name']
+    real_name = user['real_name']
     response = sc.api_call('im.open', user=user_id)
     try:
         dm_channel_id = response['channel']['id']
     except (KeyError, ValueError):
         print('Shite happened')
         return
-    sc.rtm_send_message(channel=dm_channel_id, message=template)
+    message = template.format(real_name=real_name, slack_name=slack_name)
+    sc.rtm_send_message(channel=dm_channel_id, message=message)
     notify_admin(username=user['name'])
 
 
@@ -49,7 +54,7 @@ def main():
                     send_welcome_message(user=event['user'])
             time.sleep(1)
     else:
-        print ("Connection Failed, invalid token?")
+        print('Connection Failed, invalid token?')
 
 
 if __name__ == '__main__':

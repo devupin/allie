@@ -1,9 +1,8 @@
 import time
-import os
 
 from slackclient import SlackClient
+from settings import token
 
-token = os.environ['SLACK_BOT_API_TOKEN']
 sc = SlackClient(token)
 team_join_event = 'team_join'
 

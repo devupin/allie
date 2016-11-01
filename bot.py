@@ -7,10 +7,14 @@ sc = SlackClient(token)
 team_join_event = 'team_join'
 admin_dm_channels = []
 
-with open('template.txt') as f:
-    template = f.read()
 
+try:
+    with open('template.txt') as f:
+        template = f.read()
+except (IOError, OSError) as err:
+    print('Shite happened: {}'.format(err)
 
+          
 def _get_admin_ids():
     users = sc.api_call('users.list')
     return [u['id'] for u in users['members'] if u.get('is_admin') is True]

@@ -2,6 +2,8 @@
 
 allie is a welcome bot written for Slack teams in Python 3.
 
+**NOTE**: I am no longer using this bot. Check [Ares](https://github.com/avinassh/ares) instead. 
+
 ## Features
 
 - Sends a private message to newly joined team member
